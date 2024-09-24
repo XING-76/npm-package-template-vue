@@ -1,0 +1,75 @@
+$circle-sizes: (
+  xl: 1600px,
+  lg: 1400px,
+  md: 1200px,
+  sm: 900px,
+  xs: 600px
+);
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tc-errorPage-wrapper {
+  background: radial-gradient(20% 60% at 50% 50%, map-get($blue, 'B4') 0%, map-get($blue, 'B5') 100%);
+  margin: 0;
+  padding: 0;
+  overflow: hidden; // 隱藏滾動條
+  height: 100vh; // 高度設為視口高度
+  width: 100vw; // 寬度設為視口寬度
+  position: relative;
+
+  .tc-circle-wrapper {
+    @include circle(1600px); // 最大圓圈直徑
+    background-color: map-get($views, 'error-page-circle-wrapper');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); // 將容器中心對齊於視口中心
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    @each $key, $size in $circle-sizes {
+      .#{$key}-circle {
+        @include circle($size);
+      }
+    }
+  }
+
+  .tc-errorPage-container {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 calc(1rem * 5);
+    text-align: center;
+    color: $white;
+
+    .tc-errorPage-title {
+      color: $white;
+      margin-top: 1.5rem;
+      font-weight: 700;
+      font-size: 2.75rem;
+      line-height: 130%;
+      letter-spacing: 0.04em;
+    }
+
+    .tc-errorPage-text {
+      font-size: 14px;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+

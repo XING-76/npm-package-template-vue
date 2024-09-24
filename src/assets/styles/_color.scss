@@ -1,0 +1,65 @@
+$blue: (
+  'B0': #05c3dd,
+  'B1': #3aa2d0,
+  'B2': #0090c8,
+  'B3': #3f9afc,
+  'B4': #3b8aff,
+  'B5': #0048b3
+);
+
+$gray: (
+  'G0': transparent,
+  'G1': #f6f6f6,
+  'G2': #d3d8e7,
+  'G3': #9799a8,
+  'G4': #818496,
+  'G5': #757575,
+  'G6': #616161,
+  'G7': #494754,
+  'G8': #4a4a4a,
+  'G9': #353341,
+  'G10': #212121,
+  'G11': #292929
+);
+
+$white: #ffffff;
+$black: #000000;
+$error: #ff3a40;
+
+$light-white: #f5f5f5;
+$dark-gray: #a9a9a9;
+
+$primary: map-get($blue, 'B3');
+// $secondary: map-get($blue, 'B0');
+
+$modules: (
+  'loading-bg': #eceff1
+);
+
+$components: ();
+
+$views: (
+  'error-page-circle-wrapper': #2d90fa80,
+  'loading-page-b1': #00a3ff,
+  'loading-page-b2': #05c3dd,
+  'loading-page-b3': #72e2f1
+);
+
+$color: (
+  'main': (
+    'background': map-get($gray, 'G1'),
+    'text-black': map-get($gray, 'G8'),
+    'text-gray': map-get($gray, 'G6'),
+    'border': map-get($gray, 'G3'),
+    'scrollbar': $dark-gray,
+    'bg-scrollbar': $light-white
+  ),
+  'common': (
+    'text': map-get($gray, 'G9'),
+    'border': map-get($gray, 'G2'),
+    'border-gray': map-get($gray, 'G3'),
+    'list-item-link': map-get($blue, 'B2'),
+    'list-expand-bg': map-get($gray, 'G1'),
+    'list-expand-text': map-get($gray, 'G7')
+  )
+);

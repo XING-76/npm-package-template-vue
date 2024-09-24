@@ -1,0 +1,70 @@
+.tc-mask-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(49, 49, 49, 0.8);
+  transition:
+    opacity 0.3s 0s,
+    visibility 0s 0.3s;
+  z-index: 99999;
+}
+
+.tc-modal-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 450px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  color: $black;
+  filter: drop-shadow(0px 11px 15px rgba(0, 0, 0, 0.2))
+    drop-shadow(0px 9px 46px rgba(0, 0, 0, 0.12)) drop-shadow(0px 24px 38px rgba(0, 0, 0, 0.14));
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition-property: transform;
+  transition-duration: 0.3s;
+
+  .tc-modal-header {
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 0.8rem 0;
+
+    &.center {
+      text-align: center;
+    }
+
+    &.hasContent {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .tc-modal-content {
+    display: flex;
+    flex-direction: column;
+
+    .tc-modal-button-row {
+      display: flex;
+      
+
+      &.center {
+        justify-content: center;
+      }
+
+      &.hasBtn {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .tc-modal-container {
+    width: 80%;
+  }
+}

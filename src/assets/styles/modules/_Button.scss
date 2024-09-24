@@ -1,0 +1,21 @@
+.tc-button {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  border-radius: 40px;
+  width: fit-content;
+  height: auto;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(41, 41, 41, 0.3);
+  background-color: transparent;
+  color: map-get($gray, 'G10');
+  transition: 0.3s;
+
+  &.primary {
+    background-color: $primary;
+    color: $white;
+    border: none;
+  }
+}
