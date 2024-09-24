@@ -76,11 +76,8 @@ export const <StoryName>: Story = {
 - Use `git url` as `devDependencies` for importing
 
 ```json
-// package.json
 {
-  ...,
   "devDependencies": {
-    ...,
     "<package-name>": "git+ssh://git@github.com/<owner>/<repo>.git"
   }
 }
