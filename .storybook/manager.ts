@@ -4,8 +4,8 @@ import { create } from '@storybook/theming'
 addons.setConfig({
   theme: create({
     base: 'dark',
-    brandTitle: 'TShop Storybook',
-    brandImage: '/logo.svg',
+    // brandTitle: 'npm-package-template-vue',
+    // brandImage: '/logo.svg',
     brandTarget: '_self'
   })
 })
