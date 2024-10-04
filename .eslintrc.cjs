@@ -27,7 +27,7 @@ module.exports = {
     requireConfigFile: false
   },
   plugins: ['no-relative-import-paths', 'vue', 'prettier', 'unused-imports'],
-  include: ['./src/auto-imports.d.ts'],
+  // include: ['./src/auto-imports.d.ts'],
   overrides: [
     {
       files: ['components/**/*.js', 'components/**/*.vue', 'src/**/*.js', 'src/**/*.vue']
@@ -54,6 +54,13 @@ module.exports = {
         disallowVue3BuiltInComponents: false
       }
     ],
+    'vue/block-order': [
+      'error',
+      {
+        order: ['script', 'template', 'style']
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
     radix: ['error', 'always'], // Enforce radix when using parseInt()
     curly: 1, // Enforce curly braces for control statements
     'ordered-imports': [0], // Allow/disallow ordered imports

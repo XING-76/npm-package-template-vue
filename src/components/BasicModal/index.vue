@@ -1,40 +1,3 @@
-<template>
-  <div
-    v-show="isShow"
-    class="tc-mask-wrapper"
-  >
-    <div class="tc-modal-container">
-      <div
-        class="tc-modal-header"
-        :class="headerClass"
-        v-if="title"
-      >
-        {{ title }}
-      </div>
-
-      <div class="tc-modal-content">
-        <slot name="modalBody" />
-
-        <div
-          class="tc-modal-button-row"
-          :class="btnClass"
-          v-if="buttonText"
-        >
-          <Button
-            :button-text="buttonText"
-            :style="{ width: '50%' }"
-            :handle-on-click="handleOnClose"
-          />
-        </div>
-
-        <template v-if="isButtonGroup">
-          <slot name="buttonGroup" />
-        </template>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import Button from '@/modules/Button/index.vue'
 
@@ -83,7 +46,7 @@ const hasBodySlot = computed(() => !!slots.modalBody)
 
 const btnClass = computed(() => {
   const center = props.buttonCenter ? 'center' : ''
-  const content = hasBodySlot ? 'hasBtn' : ''
+  const content = hasBodySlot.value ? 'hasBtn' : ''
 
   return content.length ? `${center} ${content}` : center
 })
@@ -98,6 +61,43 @@ function _hide() {
 
 defineExpose({ show: _show, hide: _hide })
 </script>
+
+<template>
+  <div
+    v-show="isShow"
+    class="tc-mask-wrapper"
+  >
+    <div class="tc-modal-container">
+      <div
+        v-if="title"
+        class="tc-modal-header"
+        :class="headerClass"
+      >
+        {{ title }}
+      </div>
+
+      <div class="tc-modal-content">
+        <slot name="modalBody" />
+
+        <div
+          v-if="buttonText"
+          class="tc-modal-button-row"
+          :class="btnClass"
+        >
+          <Button
+            :button-text="buttonText"
+            :style="{ width: '50%' }"
+            :handle-on-click="handleOnClose"
+          />
+        </div>
+
+        <template v-if="isButtonGroup">
+          <slot name="buttonGroup" />
+        </template>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 //
