@@ -1,32 +1,3 @@
-<template>
-  <div
-    v-show="isShow"
-    class="tc-mask-wrapper"
-  >
-    <template v-if="isBasicSize">
-      <div
-        class="tc-modal-container"
-      >
-      <div
-        class="tc-modal-header"
-        :class="titleCenter ? 'center' : ''"
-        v-if="title"
-      >
-        {{ title }}
-      </div>
-
-        <div class="tc-modal-content">
-          <slot name="modalBody" />
-        </div>
-      </div>
-    </template>
-
-    <template v-if="!isBasicSize">
-      <slot name="modalBody" />
-    </template>
-  </div>
-</template>
-
 <script setup lang="ts">
 const props = defineProps({
   title: {
@@ -63,6 +34,35 @@ function _hide() {
 
 defineExpose({ show: _show, hide: _hide })
 </script>
+
+<template>
+  <div
+    v-show="isShow"
+    class="tc-mask-wrapper"
+  >
+    <template v-if="isBasicSize">
+      <div
+        v-if="title"
+        class="tc-modal-container"
+      >
+        <div
+          class="tc-modal-header"
+          :class="titleCenter ? 'center' : ''"
+        >
+          {{ title }}
+        </div>
+
+        <div class="tc-modal-content">
+          <slot name="modalBody" />
+        </div>
+      </div>
+    </template>
+
+    <template v-if="!isBasicSize">
+      <slot name="modalBody" />
+    </template>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 //

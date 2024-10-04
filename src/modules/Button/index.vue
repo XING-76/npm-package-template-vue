@@ -1,17 +1,3 @@
-<template>
-    <button
-      class="tc-button"
-      :class="computedClass"
-      :style="computedStyle"
-      type="button"
-      @click="handleOnClick"
-      @mouseenter="isHovered = true"
-      @mouseleave="isHovered = false"
-    >
-      {{ buttonText }}
-    </button>
-</template>
-
 <script setup lang="ts">
 const props = defineProps({
   primary: {
@@ -54,6 +40,20 @@ const computedStyle = computed(() => {
   return isHovered.value ? { ...props.style, ...props.hoverStyle } : props.style
 })
 </script>
+
+<template>
+  <button
+    class="tc-button"
+    :class="computedClass"
+    :style="computedStyle"
+    type="button"
+    @click="handleOnClick"
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
+  >
+    {{ buttonText }}
+  </button>
+</template>
 
 <style lang="scss" scoped>
 //
