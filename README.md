@@ -26,10 +26,22 @@ NPM_AUTH_TOKEN={personal access token}
 
 ### Command Instructions
 
-1. `npm run start`: Start developing with storybook
-2. `npm run build`: Build the project
-3. `npm run release`: Build and publish a new version
-4. `npm run update`: Merge updates into `master` (run on the `develop` branch)
+**Start developing with storybook**
+```bash
+npm run start
+```
+**Build the project**
+```bash
+npm run build
+```
+**Build and publish a new version**
+```bash
+npm run release
+```
+**Merge updates into `master` (run on the `develop` branch)**
+```bash
+npm run update
+```
 
 ### Git Flow
 
