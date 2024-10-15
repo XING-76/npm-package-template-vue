@@ -19,8 +19,7 @@
 1. Create a `.env` file for publishing
 2. Set up a `personal access token (classic)` by following [the official documentation.](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)
 
-```
-// .env
+```shell
 NPM_AUTH_TOKEN={personal access token}
 ```
 
